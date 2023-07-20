@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SCC: 一个由C++编写的加密</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-view">
+        <meta name="description" content="SCC release">
+        <meta name="author", content="CVKNO80098">
+        <link rel="stylesheet" href="./main.css">
+        <link href="./bootstrap-5.3.0-dist/css/bootstrap.css" rel="stylesheet">
+        <script type="text/javascript" src="./bootstrap-5.3.0-dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="./main.js" ></script>
+    </head>
+    <body>
+        <!--header block-->
+        <div class="header" id="originalNavbar">
+            <ul class="header">
+                <li class="header"><a href="index.html">Home</a></li>
+                <li class="header"><a class="active" href="News.html">News</a></li>
+                <li class="header"><a href="Contact.html">Contact</a></li>
+                <li class="header" style="float:right"><a href="Download.html">Download</a></li>
+            </ul>
+        </div>
+        <button id="toggleNavbar" class="btn btn-light d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#newNavbar" aria-controls="newNavbar">
+            <img src="./chevrons-right.svg" alt="Icon">
+        </button>
+          <div id="newNavbar" class="offcanvas offcanvas-start">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Navbar</h5>
+                <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#newNavbar" aria-controls="newNavbar">
+                    <img src="./corner-down-left.svg" alt="Icon">
+                </button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="offcanvas-nav">
+                    <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="index.html">Home</a></li><br/>
+                    <li class="offcanvas-nav-item"><a class="offcanvas-nav-link active" href="News.html">News</a></li><br/>
+                    <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="Contact.html">Contact</a></li><br/>
+                    <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="Download.html">Download</a></li><br/>
+                </ul>
+            </div>
+        </div>
+        <script>
+            var originalNavbar = document.getElementById('originalNavbar');
+            var newNavbar = document.getElementById('newNavbar');
+
+            window.addEventListener('load', function() {
+                if (window.innerWidth < 768) {
+                    originalNavbar.style.display = 'none';
+                    newNavbar.style.display = 'block';
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768) {
+                    originalNavbar.style.display = 'block';
+                    newNavbar.style.display = 'none';
+                } else {
+                    originalNavbar.style.display = 'none';
+                    newNavbar.style.display = 'block';
+                }
+            });
+        </script>
+        
+
+        <br/><div class="mx-auto card">
+            <div class="card-header">
+                Release<div class="spinner-border text-primary spinner-border-sm" role="status"><span class="visually-hidden">Loading...</span></div><span class="badge text-bg-primary" style="float: right;">Last Version</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">V1.2.4</h5>
+                <p class="card-text">修复BUG，完善命令行参数内容，请查看readme</p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapse1.2.4" role="button" aria-expanded="false" aria-controls="collapseExample">Details</a>
+                <div class="collapse" id="collapse1.2.4">
+                    <div class="card card-body">
+                        你可以在<a href="./SCC_1.2.4.exe">这里</a>下载
+                    </div>
+                </div>
+            </div>
+          </div>
+        <br/><div class="mx-auto card">
+            <div class="card-header">
+                Release[开发包]
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">V1.1.1</h5>
+                <p class="card-text">支持命令行参数，修复了命令行运行SCC导致中文传入参数混乱的错误<br/>请注意：使用命令行参数时控制台编码必须是GBK</p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapse1.1.1" role="button" aria-expanded="false" aria-controls="collapseExample">Details</a>
+                <div class="collapse" id="collapse1.1.1">
+                    <div class="card card-body">
+                        你可以在<a href="./SCC_1.1.1.zip">这里</a>下载
+                    </div>
+                </div>
+            </div>
+          </div>
+        <br/><div class="mx-auto card">
+            <div class="card-header">
+                Release[开发包]
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">V1.0.0</h5>
+                <p class="card-text">We implemented the most basic encryption using C++on the command line</p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapse1.0.0" role="button" aria-expanded="false" aria-controls="collapseExample">Details</a>
+                <div class="collapse" id="collapse1.0.0">
+                    <div class="card card-body">
+                        你可以在<a href="./SCC_1.0.0.zip">这里</a>下载
+                    </div>
+                </div>
+            </div>
+          </div>

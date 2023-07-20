@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SCC: 一个由C++编写的加密</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-view">
+        <meta name="description" content="SCC release">
+        <meta name="author", content="CVKNO80098">
+        <link rel="stylesheet" href="./main.css">
+        <link href="./bootstrap-5.3.0-dist/css/bootstrap.css" rel="stylesheet">
+        <script type="text/javascript" src="./bootstrap-5.3.0-dist/js/bootstrap.js"></script>
+    </head>
+    <body>
+        <!--header block-->
+        <div class="header" id="originalNavbar">
+            <ul class="header">
+                <li class="header"><a class="active" href="index.html">Home</a></li>
+                <li class="header"><a href="News.html">News</a></li>
+                <li class="header"><a href="Contact.html">Contact</a></li>
+                <li class="header" style="float:right"><a href="Download.html">Download</a></li>
+            </ul>
+        </div>
+        <button id="toggleNavbar" class="btn btn-light d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#newNavbar" aria-controls="newNavbar">
+            <img src="./chevrons-right.svg" alt="Icon">
+        </button>
+          <div id="newNavbar" class="offcanvas offcanvas-start">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Navbar</h5>
+                <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#newNavbar" aria-controls="newNavbar">
+                    <img src="./corner-down-left.svg" alt="Icon">
+                </button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="offcanvas-nav">
+                    <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="index.html">Home</a></li><br/>
+                    <li class="offcanvas-nav-item"><a class="offcanvas-nav-link active" href="News.html">News</a></li><br/>
+                    <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="Contact.html">Contact</a></li><br/>
+                    <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="Download.html">Download</a></li><br/>
+                </ul>
+            </div>
+        </div>
+        <script>
+            var originalNavbar = document.getElementById('originalNavbar');
+            var newNavbar = document.getElementById('newNavbar');
+
+            window.addEventListener('load', function() {
+                if (window.innerWidth < 768) {
+                    originalNavbar.style.display = 'none';
+                    newNavbar.style.display = 'block';
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768) {
+                    originalNavbar.style.display = 'block';
+                    newNavbar.style.display = 'none';
+                } else {
+                    originalNavbar.style.display = 'none';
+                    newNavbar.style.display = 'block';
+                }
+            });
+        </script>
+        <br/>
+        <div class="alert alert-primary" role="alert">
+            请注意，该页面正在编写中，很多地方都未完成
+        </div>
+        <!--Main Hb-->
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <div class="main_Hb">
+                        <h1>SCC:一个由C++编写的加密</h1>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <div class="main_Hb_U" style = "background-color: #aaaaaa;">
+                        <h1>新作:这是一个饼，先放着</h1>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden" _msttexthash="4029103" _msthash="205">以前</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden" _msttexthash="6235931" _msthash="206">下一个</span>
+            </button>
+        </div>
+        <!--Main 描述-->
+        <div class="row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" _msttexthash="22689342" _msthash="320">Readme</h5>
+                        <p class="card-text" _msttexthash="99692112" _msthash="321">在一切开始前，也许你该看看这个</p>
+                        <a href="./mdreadme.html" class="btn btn-primary" _msttexthash="13681122" _msthash="322">Go where</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" _msttexthash="22689342" _msthash="323">DLL</h5>
+                        <p class="card-text" _msttexthash="99692112" _msthash="324">也许你希望SCC更好的适应你的Windows软件，可以看看这个！</p>
+                        <a href="./DLLreadme.html" class="btn btn-primary" _msttexthash="13681122" _msthash="325">DLL package</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <h3 class="mt-4" style="text-align:center;">SCC讲解</h3>
+
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">主要特点</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">数据加密和解密：SCC 提供了可靠的加密算法，使您能够对文件进行安全加密，并在需要时进行解密。</li>
+                        <li class="list-group-item">命令行和图形界面支持：SCC 可以通过命令行或简单的双击运行方式进行使用，以适应不同用户的需求和使用习惯。</li>
+                        <li class="list-group-item">自定义储存为文本文件：您可以选择将加密后的文件以文本文件的形式进行储存，方便存储和传输，并确保数据的完整性。</li>
+                        <li class="list-group-item">密码保护：SCC 支持通过密码来保护您的加密文件，确保只有授权用户才能访问和解密数据。</li>
+                        <li class="list-group-item">简单易用：SCC 的设计旨在让用户可以轻松使用，即使对编程和加密概念不熟悉的用户也能快速上手。</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h3 class="card-title">使用指南</h3>
+                    <ol>
+                        <li>命令行模式：您可以通过命令行运行 SCC 程序，并使用参数来执行加密和解密操作。请确保在命令行中输入正确的参数和文件路径，避免使用中文和包含空格的文件路径。</li>
+                        <li>图形界面模式：如果您更喜欢使用图形界面进行操作，只需双击运行 SCC 程序，然后按照界面上的指示进行操作即可。</li>
+                    </ol>
+                </div>
+            </div>
+        
+            <div class="card mt-4">
+                <div class="card-body">
+                    <p><strong>安全性提示</strong>: 为了确保数据的安全性，请选择一个强密码来加密您的文件。强密码应包含大小写字母、数字和特殊字符，并且长度足够长。同时，请妥善保管您的密码，避免将密码以明文形式存储在计算机或其他地方，以免被他人获取。</p>
+                </div>
+            </div>
+        
+            <div class="card mt-4">
+                <div class="card-body">
+                    <p>如有任何问题或建议，欢迎联系我们的支持团队。您可以发送电子邮件至 <a href="mailto:CVKNO80098@outlook.com">CVKNO80098@outlook.com</a>，我们将尽快回复您。</p>
+                </div>
+            </div>
+        </div>
+        
+        
+      
+      
+
+        <!--额为有趣的东西-->
+    </body>
+</html>

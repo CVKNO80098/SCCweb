@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>使用说明</title>
+  <link rel="stylesheet" href="./bootstrap-5.3.0-dist/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+  </style>
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-view">
+  <meta name="description" content="SCC release">
+  <meta name="author", content="CVKNO80098">
+</head>
+<body>
+  <a href="./index.html" class="btn btn-primary">返回</a>
+  <div class="container">
+    <h1>使用说明</h1>
+
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">概述</h2>
+        <p>这个 DLL 提供了名为 <code>SCCMain</code> 的函数，它可以执行一些字符串加密和解密操作。该函数接受以下参数：</p>
+        <ul>
+          <li><code>chioce</code>: 选择执行的操作模式，可取值为 1 或 2。</li>
+          <li><code>userInput</code>: 用户输入的字符串。</li>
+          <li><code>passWordsub</code>: 密码字符串。</li>
+          <li><code>outputBuffer</code>: 用于接收函数执行结果的缓冲区。</li>
+          <li><code>bufferSize</code>: 输出缓冲区的大小。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mt-3">
+      <div class="card-body">
+        <h2 class="card-title">操作模式</h2>
+        <p>这个 DLL 支持两种操作模式：</p>
+        <ol>
+          <li>
+            <strong>模式一：加密字符串</strong>
+            <ul>
+              <li>设置 <code>chioce</code> 参数为 1。</li>
+              <li>将要加密的字符串作为 <code>userInput</code> 参数传递。</li>
+              <li>设置加密所需的密码字符串为 <code>passWordsub</code> 参数传递。</li>
+              <li>提供足够大的 <code>outputBuffer</code> 缓冲区来接收加密后的结果。</li>
+            </ul>
+          </li>
+          <li>
+            <strong>模式二：解密字符串</strong>
+            <ul>
+              <li>设置 <code>chioce</code> 参数为 2。</li>
+              <li>将要解密的字符串作为 <code>userInput</code> 参数传递。</li>
+              <li>设置解密所需的密码字符串为 <code>passWordsub</code> 参数传递。</li>
+              <li>提供足够大的 <code>outputBuffer</code> 缓冲区来接收解密后的结果。</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="card mt-3">
+      <div class="card-body">
+        <h2 class="card-title">使用示例</h2>
+        <p>以下是一个使用该 DLL 的示例代码，你可以参考它来集成 DLL 到你的项目中：</p>
+        <pre><code>#include &lt;iostream&gt;
+#include &lt;Windows.h&gt;
+
+// 声明要调用的函数类型
+typedef void (*CallSCCMainFunc)(int, const wchar_t*, const wchar_t*, wchar_t*, int);
+
+int main() {
+    // 加载 DLL
+    HMODULE dllHandle = LoadLibrary(L"SCCdll.dll");
+    if (dllHandle == nullptr) {
+        std::cerr &lt;&lt; "Failed to load DLL." &lt;&lt; std::endl;
+        return 1;
+    }
+
+    // 获取要调用的函数地址
+    CallSCCMainFunc callSCCMain = reinterpret_cast&lt;CallSCCMainFunc&gt;(GetProcAddress(dllHandle, "CallSCCMain"));
+    if (callSCCMain == nullptr) {
+        std::cerr &lt;&lt; "Failed to get function address." &lt;&lt; std::endl;
+        FreeLibrary(dllHandle);  // 卸载 DLL
+        return 1;
+    }
+
+    // 准备输入参数和输出缓冲区
+    int choice = 1;
+    const wchar_t* userInput = L"Hello, world!";
+    const wchar_t* password = L"MyPassword";
+    wchar_t outputBuffer[256] = { 0 };  // 假设输出缓冲区大小为 256
+
+    // 调用 DLL 中的函数
+    callSCCMain(choice, userInput, password, outputBuffer, sizeof(outputBuffer) / sizeof(wchar_t));
+
+    // 输出结果
+    std::wcout &lt;&lt; "Output: " &lt;&lt; outputBuffer &lt;&lt; std::endl;
+
+    // 卸载 DLL
+    FreeLibrary(dllHandle);
+
+    return 0;
+}</code></pre>
+
+        <p>请将示例代码中的 <code>SCCdll.dll</code> 替换为你的 DLL 文件名，并根据你的实际情况修改输入参数和输出缓冲区的大小。确保输入参数和输出缓冲区的类型与你的 DLL 函数声明一致。</p>
+      </div>
+    </div>
+
+    <div class="card mt-3">
+      <div class="card-body">
+        <h2 class="card-title">注意事项</h2>
+        <ul>
+          <li>在使用 DLL 之前，请确保 DLL 文件与你的应用程序位于同一个目录下，或者将 DLL 文件放置在系统搜索路径中。</li>
+          <li>请根据你的实际需求提供足够大的输出缓冲区，以确保能够容纳函数执行结果。</li>
+          <li>如果遇到任何问题或错误，请参考错误消息并确保 DLL 文件正确加载。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <a href="./SCCdll.dll" class="btn btn-primary" style="text-align: center;">下载</a>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

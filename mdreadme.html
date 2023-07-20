@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Markdown to HTML</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.3/marked.min.js"></script>
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-view">
+  <meta name="description" content="SCC release">
+  <meta name="author", content="CVKNO80098">
+
+</head>
+<body>
+  <div id="markdown-container"></div>
+  <script>
+    // 获取 Markdown 文件的 URL
+    var mdFileUrl = "./readme.md";
+  
+    // 获取 markdown-container 元素
+    var container = document.getElementById("markdown-container");
+  
+    // 使用 AJAX 或 Fetch API 获取 Markdown 文件的内容
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          var markdownContent = xhr.responseText;
+  
+          // 使用 marked.js 将 Markdown 转换为 HTML
+          var htmlContent = marked(markdownContent);
+  
+          // 将 HTML 内容添加到容器元素中
+          container.innerHTML = htmlContent;
+        } else {
+          console.error("Failed to load Markdown file");
+        }
+      }
+    };
+    xhr.open("GET", mdFileUrl, true);
+    xhr.send();
+  </script>
+</body>
+</html>
+
+
+  

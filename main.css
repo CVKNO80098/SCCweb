@@ -1,0 +1,94 @@
+/*导航页*/
+div.header ul.header {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #575757;
+}
+
+div.header li.header{
+    float: left;
+}
+
+div.header li.header a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+div.header li.header a:hover:not(.active) {
+    background-color: #1c1c1c;
+}
+div.header .active {
+    background-image: linear-gradient(89.85318845979805deg, rgba(130, 157, 255,1) -5.116452562038319%,rgba(94, 94, 255,1) 75.47470583733953%,rgba(94, 94, 255,1) 76.52929367879445%);
+}
+/*展示板的*/
+div.main_Hb {
+    background-image: linear-gradient(90deg, rgba(113, 84, 255,1) 20.238275514653203%,rgba(113, 83, 255,1) 20.238275514653203%,rgba(130, 78, 255,1) 33.75973760131768%,rgba(190, 59, 255,1) 80.22258685755727%);
+}
+div.main_Hb h1 {
+    text-align: left;
+    padding: 100px 10%;
+    color: #ffffff;
+}
+div.main_Hb_U h1 {
+    text-align: left;
+    padding: 100px 10%;
+    color: #ffffff;
+}
+/*GPT生成*/
+/* @media (max-width: 768px) {
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header ul {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .header li {
+      margin: 5px;
+    }
+    .header li a {
+      padding: 10px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .header {
+      text-align: right;
+    }
+  } */
+
+  @media (max-width: 768px) {
+    #originalNavbar {
+        display: none;
+    }
+
+    #newNavbar {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    #originalNavbar {
+        display: block;
+    }
+
+    #newNavbar {
+        display: none;
+    }
+}
+
+/*boo的调整*/
+.row {
+  width: 100%;
+}
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SCC: 一个由C++编写的加密</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-view">
+        <meta name="description" content="SCC release">
+        <meta name="author", content="CVKNO80098">
+        <link rel="stylesheet" href="./main.css">
+        <link href="./bootstrap-5.3.0-dist/css/bootstrap.css" rel="stylesheet">
+        <script type="text/javascript" src="./bootstrap-5.3.0-dist/js/bootstrap.js"></script>
+    </head>
+    <body>
+        <!--header block-->
+        <div class="header" id="originalNavbar">
+            <ul class="header">
+                <li class="header"><a href="index.html">Home</a></li>
+                <li class="header"><a href="News.html">News</a></li>
+                <li class="header"><a href="Contact.html">Contact</a></li>
+                <li class="header" style="float:right"><a class="active" href="Download.html">Download</a></li>
+            </ul>
+        </div>
+        <button id="toggleNavbar" class="btn btn-light d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#newNavbar" aria-controls="newNavbar">
+            <img src="./chevrons-right.svg" alt="Icon">
+        </button>
+          <div id="newNavbar" class="offcanvas offcanvas-start">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Navbar</h5>
+                <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#newNavbar" aria-controls="newNavbar">
+                    <img src="./corner-down-left.svg" alt="Icon">
+                </button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="offcanvas-nav">
+                    <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="index.html">Home</a></li><br/>
+                    <li class="offcanvas-nav-item"><a class="offcanvas-nav-link active" href="News.html">News</a></li><br/>
+                    <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="Contact.html">Contact</a></li><br/>
+                    <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="Download.html">Download</a></li><br/>
+                </ul>
+            </div>
+        </div>
+        <script>
+            var originalNavbar = document.getElementById('originalNavbar');
+            var newNavbar = document.getElementById('newNavbar');
+
+            window.addEventListener('load', function() {
+                if (window.innerWidth < 768) {
+                    originalNavbar.style.display = 'none';
+                    newNavbar.style.display = 'block';
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768) {
+                    originalNavbar.style.display = 'block';
+                    newNavbar.style.display = 'none';
+                } else {
+                    originalNavbar.style.display = 'none';
+                    newNavbar.style.display = 'block';
+                }
+            });
+        </script>
+        <p style = "text-align:center;">还没写捏</p>

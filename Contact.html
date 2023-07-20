@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SCC: 一个由C++编写的加密</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-view">
+        <meta name="description" content="SCC release">
+        <meta name="author", content="CVKNO80098">
+        <link rel="stylesheet" href="./main.css">
+        <link href="./bootstrap-5.3.0-dist/css/bootstrap.css" rel="stylesheet">
+        <script type="text/javascript" src="./bootstrap-5.3.0-dist/js/bootstrap.js"></script>
+    </head>
+    <body>
+        <!--header block-->
+        <div class="header" id="originalNavbar">
+          <ul class="header">
+              <li class="header"><a href="index.html">Home</a></li>
+              <li class="header"><a href="News.html">News</a></li>
+              <li class="header"><a class="active" href="Contact.html">Contact</a></li>
+              <li class="header" style="float:right"><a href="Download.html">Download</a></li>
+          </ul>
+      </div>
+      <button id="toggleNavbar" class="btn btn-light d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#newNavbar" aria-controls="newNavbar">
+          <img src="./chevrons-right.svg" alt="Icon">
+      </button>
+        <div id="newNavbar" class="offcanvas offcanvas-start">
+          <div class="offcanvas-header">
+              <h5 class="offcanvas-title">Navbar</h5>
+              <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#newNavbar" aria-controls="newNavbar">
+                  <img src="./corner-down-left.svg" alt="Icon">
+              </button>
+          </div>
+          <div class="offcanvas-body">
+              <ul class="offcanvas-nav">
+                  <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="index.html">Home</a></li><br/>
+                  <li class="offcanvas-nav-item"><a class="offcanvas-nav-link active" href="News.html">News</a></li><br/>
+                  <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="Contact.html">Contact</a></li><br/>
+                  <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="Download.html">Download</a></li><br/>
+              </ul>
+          </div>
+      </div>
+      <script>
+          var originalNavbar = document.getElementById('originalNavbar');
+          var newNavbar = document.getElementById('newNavbar');
+
+          window.addEventListener('load', function() {
+              if (window.innerWidth < 768) {
+                  originalNavbar.style.display = 'none';
+                  newNavbar.style.display = 'block';
+              }
+          });
+
+          window.addEventListener('resize', function() {
+              if (window.innerWidth >= 768) {
+                  originalNavbar.style.display = 'block';
+                  newNavbar.style.display = 'none';
+              } else {
+                  originalNavbar.style.display = 'none';
+                  newNavbar.style.display = 'block';
+              }
+          });
+      </script>
+        <br/>
+        <div class="alert alert-info" role="alert">
+            如果你有意向，请加入我们<a href="mailto:CVKNO80098@outlook.com">CVKNO80098@outlook.com</a>
+
+        </div>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    本软件使用 GNU通用公共许可证（GPL） 进行许可。
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  GNU通用公共许可证（GPL）版本 3.0<br/>
+
+                  版权所有（C）2023 泠水CVKNO80098<br/>
+
+                  本程序是自由软件：您可以重新分发和修改它。<br/>
+
+                  本程序根据GNU通用公共许可证（GPL）的条款发布，版本3.0<br/>
+
+                  本程序的目的是希望它对您有用，但没有任何担保；甚至没有适销性或特定用途的隐含担保。详细的许可证条款可以在GNU通用公共许可证的副本中找到。<br/>
+
+                  您应该已经收到一份GNU通用公共许可证的副本，如果没有，请访问<http://www.gnu.org/licenses/gpl.html>。<br/>
+
+                  根据以下情况，您可以选择遵守GNU通用公共许可证的条款和条件，或者遵循GNU通用公共许可证的某个后续版本的条款和条件：<br/>
+
+                  1. 如果您修改了此程序，您可以选择在您的修改版本中分发该程序。<br/>
+
+                  2. 如果您将此程序与其他软件组合成一个派生作品，并将其分发，您可以选择在派生作品中以GPL许可证分发该作品，或者选择符合GPL许可证某个后续版本的条款和条件。<br/>
+
+                  3. 如果您复制、分发或修改此程序的任何副本，无论是以源代码还是以二进制形式，您都必须在每个副本中保留原始的版权声明和许可证。<br/>
+
+                  无论您选择哪个选项，您都需要满足以下要求：<br/>
+
+                  1. 在源代码中保留本许可证的副本。<br/>
+
+                  2. 在分发时提供明确的版权声明和许可证。<br/>
+
+                  3. 如果以二进制形式分发本程序，则必须提供许可证附带的相应源代码或以其他方式提供访问源代码的机会。<br/>
+
+                  如果您违反本许可证的任何条款，您的权利将被终止，并可能会产生法律后果。<br/>
+
+                  作者保留在许可证中未明确授予的所有权利。<br/>
+ 
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  开发者
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ul>
+                        <li>泠水</li>
+                        <li>飒飒</li>
+                        <li><del title="这人哪来的？">咕咕</del></li>
+                    </ul>
+                    <strong>感谢所有对于此项目做出贡献的人</strong>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  打赏
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  非常感谢！！！<br/>请在备注中写下你的邮箱【或者昵称】，与想说的一句话，将展示在鸣谢名单中<br/>
+                    <img src="./alipay.jpg" alt="alipay" title="这是谁的账户a？" style="width: 200px;">
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                  鸣谢名单
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p style="text-align:center;">莫得人的说</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </body>

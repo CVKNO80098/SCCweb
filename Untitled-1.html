@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SCC: 一个由C++编写的加密</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-view">
+        <meta name="description" content="SCC release">
+        <meta name="author", content="CVKNO80098">
+        <link rel="stylesheet" href="./main.css">
+        <link href="./bootstrap-5.3.0-dist/css/bootstrap.css" rel="stylesheet">
+        <script type="text/javascript" src="./bootstrap-5.3.0-dist/js/bootstrap.js"></script>
+        <style>
+            .header {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #575757;
+            }
+
+            .header li {
+                float: left;
+            }
+
+            .header li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            .header li a:hover:not(.active) {
+                background-color: #1c1c1c;
+            }
+
+            .header .active {
+                background-image: linear-gradient(89.85318845979805deg, rgba(130, 157, 255,1) -5.116452562038319%,rgba(94, 94, 255,1) 75.47470583733953%,rgba(94, 94, 255,1) 76.52929367879445%);
+            }
+
+            .offcanvas-nav {
+                padding: 8px;
+            }
+
+            .offcanvas-nav-item {
+                padding: 8px 0;
+            }
+
+            @media (max-width: 767px) {
+                #originalNavbar {
+                    display: none;
+                }
+
+                #newNavbar {
+                    display: block;
+                }
+            }
+
+            @media (min-width: 768px) {
+                #originalNavbar {
+                    display: block;
+                }
+
+                #newNavbar {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="originalNavbar">
+            <ul class="header">
+                <li class="header"><a href="index.html">Home</a></li>
+                <li class="header"><a class="active" href="News.html">News</a></li>
+                <li class="header"><a href="Contact.html">Contact</a></li>
+                <li class="header" style="float:right"><a href="Download.html">Download</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+          <button id="toggleNavbar"  type="button" data-bs-toggle="offcanvas" data-bs-target="#newNavbar" aria-controls="newNavbar">
+            <img src="./chevrons-right.svg" alt="Icon">
+        </button>
+      </div>
+      
+      <div id="newNavbar" class="offcanvas offcanvas-start">
+          <div class="offcanvas-header">
+              <h5 class="offcanvas-title">New Navbar</h5>
+          </div>
+          <div class="offcanvas-body">
+              <ul class="offcanvas-nav">
+                  <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="index.html">Home</a></li>
+                  <li class="offcanvas-nav-item"><a class="offcanvas-nav-link active" href="News.html">News</a></li>
+                  <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="Contact.html">Contact</a></li>
+                  <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="Download.html">Download</a></li>
+              </ul>
+          </div>
+      </div>
+      
+
+        <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    </body>
+</html>
